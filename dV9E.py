@@ -9,7 +9,14 @@ def start_message():
 
 def get_player():
     print('Input your hand')
-    return int(input('0:rock, 1:scissors, 2:paper'))
+    input_message = ''
+    index = 0
+    for hand in hands:
+        input_message += str(index) + ':' + hand
+        if index < 2:
+            input_message += ', '
+        index += 1
+    return int(input(input_message))
 
 
 def get_computer():
