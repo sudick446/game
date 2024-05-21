@@ -30,13 +30,13 @@ def get_hand_name(hand_number):
 
 def view_hand(your_hand, computer_hand):
     print('My hand is ' + get_hand_name(your_hand))
-    print('Rival\'s hand is ' + get_hand_name(computer_hand))
+    print('computer\'s hand is ' + get_hand_name(computer_hand))
 
 
 def get_result(hand_diff):
     if hand_diff == 0:
         return 'draw'
-    elif hand_diff == -1 or hand_diff == 2:
+    elif hand_diff == 1 or hand_diff == -2:
         return 'win'
     else:
         return 'lose'
