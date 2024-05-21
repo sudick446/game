@@ -1,6 +1,7 @@
 import random
 
 hands = ['rock', 'scissors', 'paper']
+results = {'win': 'win', 'lose': 'lose', 'draw': 'draw try again'}
 
 
 def start_message():
@@ -32,13 +33,17 @@ def view_hand(your_hand, computer_hand):
     print('Rival\'s hand is ' + get_hand_name(computer_hand))
 
 
-def view_result(hand_diff):
+def get_result(hand_diff):
     if hand_diff == 0:
-        print('draw')
+        return 'draw'
     elif hand_diff == -1 or hand_diff == 2:
-        print('win')
+        return 'win'
     else:
-        print('lose')
+        return 'lose'
+
+
+def view_result(result):
+    print(results[result])
 
 
 start_message()
@@ -48,4 +53,5 @@ computer_hand = get_computer()
 hand_diff = your_hand - computer_hand
 
 view_hand(your_hand, computer_hand)
-view_result(hand_diff)
+result = get_result(hand_diff)
+view_result(result)
