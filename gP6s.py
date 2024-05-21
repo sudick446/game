@@ -1,5 +1,7 @@
 import random
 
+hands = ['rock', 'scissors', 'paper']
+
 
 def start_message():
     print('Start \'rock-paper-scissors\'')
@@ -12,6 +14,15 @@ def get_player():
 
 def get_computer():
     return random.randint(0, 2)
+
+
+def get_hand_name(hand_number):
+    return hands[hand_number]
+
+
+def view_hand(your_hand, computer_hand):
+    print('My hand is ' + get_hand_name(your_hand))
+    print('Rival\'s hand is ' + get_hand_name(computer_hand))
 
 
 def view_result(hand_diff):
@@ -29,4 +40,5 @@ your_hand = get_player()
 computer_hand = get_computer()
 hand_diff = your_hand - computer_hand
 
+view_hand(your_hand, computer_hand)
 view_result(hand_diff)
