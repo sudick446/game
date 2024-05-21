@@ -1,29 +1,32 @@
 import random
 
-print('Start \'rock-paper-scissors\'')
 
-print('Input your hand')
-your_hand = int(input('0:rock, 1:scissors, 2:paper'))
-computer_hand = random.randint(0, 2)
+def start_message():
+    print('Start \'rock-paper-scissors\'')
 
-if your_hand == 0:
-    if computer_hand == 0:
+
+def get_player():
+    print('Input your hand')
+    return int(input('0:rock, 1:scissors, 2:paper'))
+
+
+def get_computer():
+    return random.randint(0, 2)
+
+
+def view_result(hand_diff):
+    if hand_diff == 0:
         print('draw')
-    elif computer_hand == 1:
+    elif hand_diff == -1 or hand_diff == 2:
         print('win')
-    elif computer_hand == 2:
+    else:
         print('lose')
-elif your_hand == 1:
-    if computer_hand == 0:
-        print('lose')
-    elif computer_hand == 1:
-        print('draw')
-    elif computer_hand == 2:
-        print('win')
-elif your_hand == 2:
-    if computer_hand == 0:
-        print('win')
-    elif computer_hand == 1:
-        print('lose')
-    elif computer_hand == 2:
-        print('draw')
+
+
+start_message()
+
+your_hand = get_player()
+computer_hand = get_computer()
+hand_diff = your_hand - computer_hand
+
+view_result(hand_diff)
