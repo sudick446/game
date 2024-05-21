@@ -35,7 +35,7 @@ def view_hand(your_hand, computer_hand):
 def view_result(hand_diff):
     if hand_diff == 0:
         print('draw')
-    elif hand_diff == -1 or hand_diff == 2:
+    elif hand_diff == 1 or hand_diff == -2:
         print('win')
     else:
         print('lose')
